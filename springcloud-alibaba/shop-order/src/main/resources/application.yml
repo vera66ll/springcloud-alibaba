@@ -1,0 +1,36 @@
+server:
+  port: 8091
+  tomcat:
+    max-threads: 10  # 限制tomcat最大线程数量
+spring:
+  application:
+    name: service-order
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///shop?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: liulin1996
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+# Ribbon负载均衡策略调整
+service-product: # 调用的提供者的名称
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+# feign整合sentinel容错
+feign:
+  sentinel:
+    enabled: true
+
+# 添加RocketMQ配置，实现异步处理
+rocketmq:
+  name-server: 127.0.0.1:9876 #rocketMQ服务的地址
+  producer:
+    group: shop-order # 生产者组
