@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>vera-shop</title>
+</head>
+<body>
+<!--<h1>测试页面</h1>-->
+
+<!--&lt;!&ndash;th:text就是将div中的内容设置为它指定的值，和之前学习的Vue一样&ndash;&gt;-->
+<!--<div th:text="${msg}"></div>-->
+<!--&lt;!&ndash;不转义&ndash;&gt;-->
+<!--<div th:utext="${msg}"></div>-->
+
+<!--遍历数据-->
+<!--th:each每次遍历都会生成当前这个标签：官网#9-->
+<h1>商品列表</h1>
+<div class="with:80%">
+    <table>
+        <thead>
+        <tr>
+            <th>商品id &emsp;</th>
+            <th>商品名  &emsp;</th>
+            <th>价格/元  &emsp;</th>
+        </tr>
+        </thead>
+<!--        构建表单-->
+        <tbody>
+        <!--each来进行for循环求值-->
+        <tr  th:each="product : ${products}">
+            <th scope="row" th:text="${product.pid}">&emsp;</th>
+            <td th:text="${product.pname}">&emsp;</td>
+            <td th:text="${product.pprice}">&emsp;</td>
+<!--            <td><a th:href="@{/order-serv/order/prob(pid=${product.pid},pnum=${1},name=${product.pname},uid=${123})}">order</a></td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+    <form th:action="@{/order-serv/order/prob(name=${name},uid=${uid})}", th:method="post">
+        购买数量:<input th:type="pnum", name="pnum"><br>
+<!--        用户名:<input th:type="name", name="name",value="vera"><br>-->
+<!--        用户id:<input th:type="uid", name="uid",value="123"><br>-->
+        商品id:<input th:type="pid", name="pid"><br>
+        <input th:type="submit", th:value="购买">
+    </form>
+</body>
+</html>

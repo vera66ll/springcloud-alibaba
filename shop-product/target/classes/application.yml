@@ -1,0 +1,26 @@
+#server:
+#  port: 8081
+#spring:
+#  application:
+#    name: service-product   #服务名称
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql:///shop?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+#    username: root
+#    password: liulin1996
+#  jpa:
+#    properties:
+#      hibernate:
+#        hbm2ddl:
+#          auto: update
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+## 配置页面，关闭thymeleaf缓存
+#  thymeleaf:
+#    cache: false
+#    prefix: classpath:/templates/    # 配置路径一定要准确
+#    mode: LEGACYHTML5
+#    encoding: UTF-8

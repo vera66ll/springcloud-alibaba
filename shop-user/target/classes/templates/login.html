@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>vera-shop</title>
+</head>
+<body>
+<!--<h1>测试页面</h1>-->
+
+<!--&lt;!&ndash;th:text就是将div中的内容设置为它指定的值，和之前学习的Vue一样&ndash;&gt;-->
+<!--<div th:text="${msg}"></div>-->
+<!--&lt;!&ndash;不转义&ndash;&gt;-->
+<!--<div th:utext="${msg}"></div>-->
+
+<!--遍历数据-->
+<!--th:each每次遍历都会生成当前这个标签：官网#9-->
+<h1>登录页面</h1>
+    <form th:action="@{/user-serv/login}", th:method="post">
+        <p th:if="${login_flag}">用户密码输入错误，请重新输入</p>
+        <p th:if="${register_flag}">用户不存在请重新输入或点击register注册</p>
+        用户名:<input th:type="name", name="name"><br>
+        用户密码:<input th:type="password", name="password"><br>
+        <input th:type="submit", th:value="submit">
+    </form>
+<a th:href="@{/user-serv/to_register}">register</a>
+</body>
+</html>

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: service-product
+  cloud:
+    nacos:
+      config:
+        server‐addr: 127.0.0.1:8848 # 配置中心地址
+        file‐extension: yaml   # 配置文件格式
+        namespace: feb666b3-b12e-4dec-95a3-85c8f8e232d3 # 命名空间
+  profiles:
+    active: dev  #开发环境

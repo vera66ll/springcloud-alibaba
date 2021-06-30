@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>vera-shop</title>
+</head>
+<body>
+<!--<h1>测试页面</h1>-->
+
+<!--&lt;!&ndash;th:text就是将div中的内容设置为它指定的值，和之前学习的Vue一样&ndash;&gt;-->
+<!--<div th:text="${msg}"></div>-->
+<!--&lt;!&ndash;不转义&ndash;&gt;-->
+<!--<div th:utext="${msg}"></div>-->
+
+<!--遍历数据-->
+<!--th:each每次遍历都会生成当前这个标签：官网#9-->
+<td><a th:href="@{/product-serv/productlist(name=${name}, uid=${uid})}">登录成功，请点击进入商品页面</a></td>
+</body>
+</html>

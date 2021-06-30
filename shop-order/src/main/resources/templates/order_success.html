@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>vera-shop</title>
+</head>
+<body>
+<h1>下单成功，订单信息如下</h1>
+<p>
+    用户id:<span th:text="${order.uid}"></span>
+    用户名:<span th:text="${order.username}"></span><br>
+    商品信息:商品号<span th:text="${order.pid}"></span>
+    商品名:<span th:text="${order.pname}"></span> 商品价格:<span th:text="${order.pprice}"></span>
+</p>
+</body>
+</html>
